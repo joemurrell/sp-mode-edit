@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Auto Append ?Mode=Edit + Show Nav",
-  "version": "1.1",
-  "description": "Appends ?Mode=Edit and simulates Edit click to show SharePoint nav hub",
+  "name": "Auto Append & Show Nav Hub",
+  "version": "1.2",
+  "description": "Appends ?Mode=Edit and activates SharePoint edit mode to reveal the nav hub.",
   "permissions": ["tabs", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": ["https://*.sharepoint.com/*"],
   "background": {
     "service_worker": "background.js"
   },
@@ -13,9 +13,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.sharepoint.com/*"],
       "js": ["content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_end",
+      "all_frames": true
     }
   ]
 }
