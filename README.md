@@ -14,7 +14,6 @@ This extension automatically appends `?Mode=Edit` (or `&Mode=Edit`) to the curre
 5. Click **Load unpacked**
 6. Select the extracted folder
 
-You're done!
 
 ## 📁 Files
 
